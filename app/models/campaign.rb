@@ -7,6 +7,10 @@ class Campaign < ApplicationRecord
   enum status: [:pending, :finished]
   validates :title, :description, :user, :status, presence: true
 
+  def count_opened
+    self.members.where(open: true).count
+  end
+
   private
 
   def set_status
@@ -17,3 +21,4 @@ class Campaign < ApplicationRecord
     self.members << Member.create(name: self.user.name, email: self.user.email)
   end
 end
+
