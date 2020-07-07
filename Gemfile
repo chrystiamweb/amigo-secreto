@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'inky-rb', require: 'inky'
+gem 'premailer-rails'
 
 group :development, :test do
   gem "factory_bot_rails"
